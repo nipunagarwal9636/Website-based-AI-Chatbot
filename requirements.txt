@@ -7,3 +7,4 @@ unstructured
 sentence-transformers
 faiss-cpu
 fastembed
+os
