@@ -1,0 +1,9 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+langchain-huggingface
+unstructured
+sentence-transformers
+faiss-cpu
+fastembed
