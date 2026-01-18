@@ -7,4 +7,4 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          python app.py
+          python your_script.py
