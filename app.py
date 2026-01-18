@@ -8,7 +8,7 @@ from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import FastEmbedEmbeddings
 
-# ---------------- UI ----------------
+
 load_dotenv()
 st.set_page_config(page_title="Website-Based AI Chatbot")
 st.title("🌐 Website-Based AI Chatbot")
@@ -19,14 +19,14 @@ process_url_clicked = st.sidebar.button("Process URL")
 
 status = st.empty()
 
-# ---------------- Indexing ----------------
+
 if process_url_clicked:
     if not url:
         st.error("Please enter a valid URL.")
     else:
         try:
             status.text("Loading website...")
-            loader = UnstructuredURLLoader(urls=[url])  # ✅ FIXED
+            loader = UnstructuredURLLoader(urls=[url])  
             data = loader.load()
 
             if not data:
@@ -58,14 +58,14 @@ if process_url_clicked:
             st.error(f"Indexing failed: {e}")
             st.stop()
 
-# ---------------- LLM ----------------
+
 llm = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY"),
     model_name="llama-3.3-70b-versatile",
     temperature=0
 )
 
-# ---------------- QA ----------------
+
 query = st.text_input("Ask a question about the website")
 
 if query:
