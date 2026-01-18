@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_classic.chains import RetrievalQAWithSourcesChain
@@ -8,6 +9,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import FastEmbedEmbeddings
 
 # ---------------- UI ----------------
+load_dotenv()
 st.set_page_config(page_title="Website-Based AI Chatbot")
 st.title("🌐 Website-Based AI Chatbot")
 
